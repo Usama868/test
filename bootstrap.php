@@ -9,9 +9,9 @@ and open the template in the editor.
         <meta charset="UTF-8">
         <link href = "bootstrapCSS.css" rel = "stylesheet">
         
-           <link rel="stylesheet" type="text/css" href="stylefb.css">
-        <link rel="stylesheet" type="text/css" href="colors.css">
-        <link rel="stylesheet" type="text/css" href="w3.css">
+        <link rel="stylesheet" type="text/css" href="Css/stylefb.css">
+        <link rel="stylesheet" type="text/css" href="Css/colors.css">
+        <link rel="stylesheet" type="text/css" href="Css/w3.css">
           <meta name = "viewport" content = "width = device-width, initial-scale = 1.0">
             <script src = "https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
                   <script src = "//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
@@ -53,7 +53,7 @@ and open the template in the editor.
         <div class="content-c">
             <div class="left">
                 <h3><b>Facebook helps you connect and share with the people in your life.</b></h3>
-                <img src="fb/facebookhelps.png">
+                <img src="images/fb/facebookhelps.png">
             </div>
             <div class="right">
                 <h1><b>Create an account</b></h1>

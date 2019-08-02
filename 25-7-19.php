@@ -16,12 +16,12 @@ and open the template in the editor.
         <script src = "jqueryUi/jquery-ui-js.js" type="text/javascript"></script>
           <meta name = "viewport" content = "width = device-width, initial-scale = 1.0">
         <title>25-7-19</title>
-        <script src = "jquery-min-js.js"></script>
-        <script src = "bootstap-min-js.js"></script>
+        <script src = "script/jquery-min-js.js"></script>
+        <script src = "script/bootstap-min-js.js"></script>
                   <link href = "bootstrap/bootstrapCSS.css" rel = "stylesheet" type="text/css">
-                  <link href = "style.css" rel = "stylesheet" type="text/css">
-           <link rel="stylesheet" type="text/css" href="w3.css">
-            <link rel="stylesheet" type="text/css" href="colors.css">
+                  <link href = "Css/style.css" rel = "stylesheet" type="text/css">
+                  <link rel="stylesheet" type="text/css" href="Css/w3.css">
+                  <link rel="stylesheet" type="text/css" href="Css/colors.css">
             <div class="head img-responsive">
            
             <img src="images/photog1.png" width="150px" height="auto"  style="max-width: 100%">
@@ -29,7 +29,7 @@ and open the template in the editor.
         </div>
     
     </head>
-    <body class="body container">
+    <body class="background container" background="images/fabric1.png">
         
         <nav class="col-md-2 navmargin">
             

@@ -8,17 +8,17 @@ and open the template in the editor.
     <head>
         <meta charset="UTF-8">
         <link href = "bootstrap/bootstrapCSS.css" rel = "stylesheet">
-        <script src="script.js" type="text/javascript"></script>
-        <script src = "jquery-min-js.js"></script>
-        <script src = "bootstap-min-js.js"></script>
-           <link rel="stylesheet" type="text/css" href="style.css">
-        <link rel="stylesheet" type="text/css" href="colors.css">
-        <link rel="stylesheet" type="text/css" href="w3.css">
+        <script src="script/script.js" type="text/javascript"></script>
+        <script src = "script/jquery-min-js.js"></script>
+        <script src = "script/bootstap-min-js.js"></script>
+        <link rel="stylesheet" type="text/css" href="Css/style.css">
+        <link rel="stylesheet" type="text/css" href="Css/colors.css">
+        <link rel="stylesheet" type="text/css" href="Css/w3.css">
           <meta name = "viewport" content = "width = device-width, initial-scale = 1.0">
         <title></title>
     </head>
     
-    <body class="container body">
+    <body class="container background" background="images/fabric1.png">
          <div class="head">
            
              <img src="images/photog1.png" width="150px" height="auto"  style="max-width: 100%">

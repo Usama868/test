@@ -1,15 +1,15 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <link rel="stylesheet" type="text/css" href="style.css">
-        <link rel="stylesheet" type="text/css" href="colors.css">
-        <link href = "bootstrapCSS.css" rel = "stylesheet">
-        <script src="script.js" type="text/javascript"></script>
+        <link rel="stylesheet" type="text/css" href="Css/style.css">
+        <link rel="stylesheet" type="text/css" href="Css/colors.css">
+        <link href = "bootstrap/bootstrapCSS.css" rel = "stylesheet">
+        <script src="script/script.js" type="text/javascript"></script>
            <script src = "https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
                   <script src = "//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
          <meta name = "viewport" content = "width = device-width, initial-scale = 1.0">
           <meta charset="UTF-8">
-        <script src="script.js" type="text/javascript"></script>
+       
         <title>Registration Completed</title>
     </head>
     <body class="container" background="images/circles-light.png">

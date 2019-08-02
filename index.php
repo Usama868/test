@@ -11,13 +11,13 @@ and open the template in the editor.
          <title>Usama's Made</title>
        
        
-        <script src="script.js" type="text/javascript"></script>
-        <script src = "jquery-min-js.js"></script>
-        <script src = "bootstap-min-js.js"></script>
+         <script src="script/script.js" type="text/javascript"></script>
+         <script src = "script/jquery-min-js.js"></script>
+         <script src = "script/bootstap-min-js.js"></script>
         <link href = "bootstrap/bootstrapCSS.css" rel = "stylesheet">
-            <link rel="stylesheet" type="text/css" href="style.css">
-            <link rel="stylesheet" type="text/css" href="colors.css">
-            <link rel="stylesheet" type="text/css" href="w3.css">
+        <link rel="stylesheet" type="text/css" href="Css/style.css">
+        <link rel="stylesheet" type="text/css" href="Css/colors.css">
+        <link rel="stylesheet" type="text/css" href="Css/w3.css">
     
     
     
@@ -28,7 +28,7 @@ and open the template in the editor.
          
         </div>
     </head>
-    <body class="body container">
+    <body class="container background" background="images/fabric1.png">
         <div>
             <nav class="navmargin col-md-2">
                 <div>
@@ -55,7 +55,7 @@ and open the template in the editor.
                     </a>
                     <ul class="dropdown-menu pull-right">
                         <li><a href="facebookmain.php" target="_blank">facebook main</a></li>
-                        <li><a href="php.php" target="blank">PHP</a></li>
+                        <li><a href="Php/php.php" target="blank">PHP</a></li>
                         <li><a href="bootstrap.php" target="_self">26-7-19</a></li>
                         <li><a href="#" target="blank">232131</a></li>
                           
@@ -69,7 +69,7 @@ and open the template in the editor.
            
 
         <div>
-            <form  action="php.php" method="GET"  name="myform" onsubmit="return(validation());">
+            <form  action="php.php" method="POST"  name="myform" onsubmit="return(validation());">
           
             
             

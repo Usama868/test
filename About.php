@@ -9,12 +9,12 @@
         <title>ABOUT</title>
          <meta name = "viewport" content = "width = device-width, initial-scale = 1.0">
          <link href = "bootstrap/bootstrapCSS.css" rel = "stylesheet">
-         <link rel="stylesheet" type="text/css" href="style.css">
-         <link rel="stylesheet" type="text/css" href="colors.css">
-         <script src="script.js" type="text/javascript"></script>
-         <link rel="stylesheet" type="text/css" href="w3.css">
-         <script src = "jquery-min-js.js"></script>
-         <script src = "bootstap-min-js.js"></script>
+         <link rel="stylesheet" type="text/css" href="Css/style.css">
+         <link rel="stylesheet" type="text/css" href="Css/colors.css">
+         <script src="script/script.js" type="text/javascript"></script>
+         <link rel="stylesheet" type="text/css" href="Css/w3.css">
+         <script src = "script/jquery-min-js.js"></script>
+         <script src = "script/bootstap-min-js.js"></script>
     </head>
     <body class="container" background="images/fabric1.png">
           <div class="head">

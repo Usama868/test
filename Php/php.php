@@ -12,7 +12,7 @@ and open the template in the editor.
     <body>
         <?php
      
-        print_r($_GET);
+        print_r($_POST);
         exit();
             ?>
           
