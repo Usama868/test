@@ -5,7 +5,10 @@
         padding-bottom:px;
         
     }   
-   
+    .glyp{
+      
+           
+    }
     
     
     
@@ -51,8 +54,8 @@
     font-family: impact;
 }
  
-.background{
-  
+.body{
+    background-image: url("images/fabric1.png");
     color: white;
     font-family: verdana;
     

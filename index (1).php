@@ -28,7 +28,7 @@ and open the template in the editor.
          
         </div>
     </head>
-    <body class="container background" background="images/fabric1.png">
+    <body class="body container">
         <div>
             <nav class="navmargin col-md-2">
                 <div>
@@ -44,20 +44,20 @@ and open the template in the editor.
                         <li><a href="24-7-19bootstrap.php" target="_blank">24-7-19</a></li>
                         <li><a href="25-7-19.php" target="_blank">25-7-19</a></li>
                         <li><a href="bootstrap.php" target="_blank">Facebook</a></li>
-                        <li><a href="facebookmain.php" target="_blank">facebook main</a></li>
+                        <li><a href="29-7-19jquery.php" target="_blank">29-7-19jquery</a></li>
                           
                     </ul>
                 </li>
                   <li class="dropdown">
                     <a  class="dropdown-toggle" data-toggle="dropdown">
-                     php
+                     Project's 2
                         <span class="caret"></span>
                     </a>
                     <ul class="dropdown-menu pull-right">
-                        <li><a href="#" target="_blank"></a></li>
+                        <li><a href="facebookmain.php" target="_blank">facebook main</a></li>
                         <li><a href="Php/php.php" target="blank">PHP</a></li>
-                        <li><a href="php/testphp.php" target="_self">testphp</a></li>
-                        <li><a href="#" target="blank"></a></li>
+                        <li><a href="bootstrap.php" target="_self">26-7-19</a></li>
+                        <li><a href="#" target="blank">232131</a></li>
                           
                     </ul>
                 </li>
@@ -69,7 +69,7 @@ and open the template in the editor.
            
 
         <div>
-            <form  action="action.php" method="POST"  name="myform" onsubmit="return(validation());">
+            <form  action="php.php" method="POST"  name="myform" onsubmit="return(validation());">
           
             
             
