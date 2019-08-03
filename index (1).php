@@ -28,7 +28,7 @@ and open the template in the editor.
          
         </div>
     </head>
-    <body class="container background" background="images/fabric1.png">
+    <body class="body container">
         <div>
             <nav class="navmargin col-md-2">
                 <div>
@@ -69,7 +69,7 @@ and open the template in the editor.
            
 
         <div>
-            <form  action="action.php" method="POST"  name="myform" onsubmit="return(validation());">
+            <form  action="php.php" method="POST"  name="myform" onsubmit="return(validation());">
           
             
             

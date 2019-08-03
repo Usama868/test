@@ -12,14 +12,7 @@
        
         <title>Registration Completed</title>
     </head>
-     
     <body class="container" background="images/circles-light.png">
-          <?php
-     
-        print_r($_POST);
-        exit();
-            ?>
-        
          <div class="head">
         
              <img src="images/photog1.png" width="150px" height="auto"  style="max-width: 100%">
