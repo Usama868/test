@@ -13,14 +13,14 @@
           <script src = "https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
             
              <script src = "//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
-             <link href="Css/fb.css" rel="stylesheet" type="text/css"/>
+            
              <link href="Css/Mycss.css" rel="stylesheet" type="text/css"/>
             
        
         
        
     </head>
-    <body class="container bgcolor">
+    <body class="bgcolor">
         <div class="col-lg-12 header-control">
              <div class="align-control">
             <div>
@@ -30,7 +30,7 @@
                 
                  <div>
                     
-                      <input class=" searchbar"  type="text" name="search" placeholder="Search"/>
+                      <input class="searchbar"  type="text" name="search" placeholder="Search"/>
                       <button type="submit" class="btnsearch" ><i class="fa fa-search"></i></button>
                  </div>
                    <nav>
@@ -94,8 +94,8 @@
                 
              </div>
         </div>
-        <div class="col-md-12 content-c">
-            <div>
+        <div class="content-c">
+            <div class="see ">
                 <div class="sidebar">
                 <label>
                     <a href="https://www.facebook.com/usama.tajbaloch"><img class="img-rounded" src="images/photog.png" width="40px" height="30px" alt="Profile"><span>Usama Taj Khan</span></a>
@@ -122,9 +122,15 @@
                        
                 </div>
                 </div>
-              
+                <DIV>
+                    <div>
+                      
+                     
+            
+            </DIV>
+                </div>
             <div class="right">
-                <div class="col-md-2 ad1">
+                <div class="col-md-4 ad1">
                     <img src="images/fb/serv.jpg" width="200px">
                     <img src="images/fb/shop.jpg" width="200px">
                        <div class="">

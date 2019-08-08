@@ -54,10 +54,10 @@ and open the template in the editor.
                         <span class="caret"></span>
                     </a>
                     <ul class="dropdown-menu pull-right">
-                        <li><a href="facebookmain (1).php" target="_blank">fbmain</a></li>
+                        <li><a href="fbmain.php" target="_blank">fbmain</a></li>
                         <li><a href="Php/php.php" target="blank">PHP</a></li>
                         <li><a href="php/testphp.php" target="_self">testphp</a></li>
-                        <li><a href="#" target="blank"></a></li>
+                        <li><a href="testphp.php" target="blank">file handling</a></li>
                           
                     </ul>
                 </li>
