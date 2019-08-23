@@ -177,7 +177,20 @@ input[type=reset]{background-color: #4CAF50; color: white; }
   background-color: goldenrod;
 }
 
+
+li :hover{
+  
+  background-color: greenyellow;
+    
+}
+
+ul{
+    list-style-type: none;
+    text-align: center;
+}
+
 .navbar a.active {
+  
   background-color: #4CAF50;
 }
 
