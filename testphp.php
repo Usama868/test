@@ -12,7 +12,7 @@ and open the template in the editor.
     <body>
         <?php
          $filename = "test.txt";
-         $file = fopen( $filename, "r+" );
+         $file = fopen( $filename, "r" );
          
          if( $file == false ) {
             echo ( "Error in opening file" );
@@ -27,6 +27,10 @@ and open the template in the editor.
         ?>
     </body>
 </html>
+
+
+
+
 
 
 

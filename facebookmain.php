@@ -17,7 +17,7 @@
              <link href="Css/Mycss.css" rel="stylesheet" type="text/css"/>
             
        
-        
+       
        
     </head>
     <body class="container bgcolor">
@@ -49,12 +49,12 @@
                            
                                <span>
                
-                <span class="dropdown">
+                                   <span class="dropdown">
                     <a  class="dropdown-toggle" data-toggle="dropdown">
                         
                         <span class="caret caret1"></span>
                     </a>
-                    <span class="dropdown-menu pull-right">
+                                       <ul class="dropdown-menu pull-right">
                         
                         <li><a href="#" target="_blank">24-</a></li>
                         <li><a href="#" target="_blank">25-7-19</a></li>
@@ -74,7 +74,7 @@
                         <li><a href="#" target="_blank">a</a></li>
                         <li><a href="#" target="_blank">a</a></li>
                         
-                    </span>
+                    </ul>
                 </span>
             </span>
                 </div>     

@@ -30,9 +30,9 @@ and open the template in the editor.
     </head>
     <body class="container background" background="images/fabric1.png">
         <div>
-            <nav class="navmargin col-md-2">
+            <nav class="navmargin col-md-5">
                 <div>
-            <ul class="nav nav-tabs nav-pills nav-stacked">
+            <ul class="nav navbar-nav nav-pills">
                 <li class="active"><a href="index.php" target="_self">Home</a></li>
                 <li><a href="about.php" target="_self">About</a></li>
                 <li class="dropdown">
@@ -54,10 +54,17 @@ and open the template in the editor.
                         <span class="caret"></span>
                     </a>
                     <ul class="dropdown-menu pull-right">
-                        <li><a href="fbmain.php" target="_blank">fbmain</a></li>
+
+
+                        <li><a href="action.php" target="_blank">action</a></li>
+
                         <li><a href="Php/php.php" target="blank">PHP</a></li>
                         <li><a href="php/testphp.php" target="_self">testphp</a></li>
+
                         <li><a href="testphp.php" target="blank">file handling</a></li>
+
+                        <li><a href="db_connect.php" target="blank">dbconnect</a></li>
+
                           
                     </ul>
                 </li>
