@@ -64,6 +64,7 @@ and open the template in the editor.
                         <li><a href="testphp.php" target="blank">file handling</a></li>
 
                         <li><a href="db_connect.php" target="blank">dbconnect</a></li>
+                        <li><a href="form.php" target="blank">Form</a></li>
 
                           
                     </ul>
