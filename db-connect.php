@@ -11,7 +11,8 @@ and open the template in the editor.
     </head>
     <body>
         <?php
-       $dbconnect = mysqli_connect("localhost","root","","admission")
+       $dbconnect = mysqli_connect("localhost","root","","admission")or die("unable to connect");
+       echo"connected Successfully";
         ?>
     </body>
 </html>

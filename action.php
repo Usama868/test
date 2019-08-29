@@ -15,9 +15,29 @@
      
     <body class="container" background="images/circles-light.png">
           <?php
-     
-        print_r($_POST);
-        exit();
+     $Name = INPUT_POST["Name"];
+     $fname = INPUT_POST["fname"];
+     $userid = INPUT_POST["user_id"];
+     $idpassword = INPUT_POST["id_password"];
+     $emailid = INPUT_POST["email_id"];
+     $Address = INPUT_POST["Address"];
+     $contactno = INPUT_POST["contact_no"];
+     $country = INPUT_POST["country"];
+     $gender = INPUT_POST["gender"];
+    //database connection
+     $connect = mysqli_connect("localhost","root","","admission");
+     if($connect->connect_error){
+         die("connection Failed :".$connect->connect_error);
+     } else {
+     $stmt = $connect->prepare("INSERT INTO applicant(Name,fname,user_id,id_password,email_id,Address,contact_no,country,gender)values(?,?,?,?,?,?,?,?,?)");
+     $stmt->bind_param("ssssssiss",$Name,$fname,$userid,$idpassword,$emailid,$Address,$contact_no,$country,$gender);
+     $stmt->execute();
+     echo"Registered Successfully...";
+     $stmt->close();
+     $stmt->close();
+}
+       
+        
             ?>
         
          <div class="head">
@@ -65,35 +85,7 @@
             <input class="ok" type="submit" name="ok" value="OK" class="impact"/>
         </a>
         </div>
-        <br/>
-        <br/>
-        <br/>
-        <br/>
-        <br/>
-        <br/>
-        <br/>
-        <br/>
-        <br/>
-        <br/>
-        <br/>
-        <br/>
-        <br/>
-        <br/>
-        <br/>
-        <br/>
-        <br/>
-        <br/>
-        <br/>
-        <br/>
-        <br/>
-        <br/>
-        <br/>
-        <br/>
-        <br/>
-        <br/>
-        <br/>
-        <br/>
-        <br/>
+      
             <br/>
             <br/>
           <div  align="center">

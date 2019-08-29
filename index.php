@@ -30,7 +30,7 @@ and open the template in the editor.
     </head>
     <body class="container background" background="images/fabric1.png">
         <div>
-            <nav class="navmargin col-md-5">
+            <nav class="navmargin col-md-12">
                 <div>
             <ul class="nav navbar-nav nav-pills">
                 <li class="active"><a href="index.php" target="_self">Home</a></li>
@@ -69,14 +69,14 @@ and open the template in the editor.
            
 
         <div>
-            <form  action="action.php" method="POST"  name="myform" onsubmit="return(validation());">
+            <form  action="db-connect.php" method="POST"  name="myform" onsubmit="return(validation());">
           
             
             
             <br/>
             
          
-            <table align="center"  class="table table-responsive" background="images/fabric.png ">
+            <table align="center"  class=" table-responsive" background="images/fabric.png ">
                 
                 <tr class="darkcyan">
                 
@@ -148,7 +148,7 @@ and open the template in the editor.
                     <td class="my">
                         Country:
                     </td>
-                    <td> <select class="td" id="country"     name="dropdown" >
+                    <td> <select class="td" id="country"     name="country" >
                             <option value="Select country" >Please select your country</option> 
                             <option value="pakistan">Pakistan</option>
                             <option value="india">India</option>
@@ -163,7 +163,7 @@ and open the template in the editor.
                 </tr>
                 
                 <tr class="white">
-                    <td class="my"> Gender:</td><td> <select class="td" id="gender" name="dropdown" >
+                    <td class="my"> Gender:</td><td> <select class="td" id="gender" name="gender" >
                             <option value="Select gender">Select</option>
                             <option value="Male">Male</option>
                             <option value="Female">Female</option>
@@ -180,7 +180,7 @@ and open the template in the editor.
             
                        
                         <br/>
-                                <div align="center" class="button">
+                                <div align="center" class="button col-md-4">
                             
                             <input class="buttoni" type = "submit" name = "submit" value = "Submit" />
                             
@@ -191,7 +191,7 @@ and open the template in the editor.
         </form>
         </div>
         
-        <div class="img-responsive" align="center">
+        <div class="img-responsive col-lg-12" align="center">
              
              <img src="images/copyright.png" class="copyright">
                         </div>
