@@ -54,10 +54,18 @@ and open the template in the editor.
                         <span class="caret"></span>
                     </a>
                     <ul class="dropdown-menu pull-right">
+
+
                         <li><a href="action.php" target="_blank">action</a></li>
+
                         <li><a href="Php/php.php" target="blank">PHP</a></li>
                         <li><a href="php/testphp.php" target="_self">testphp</a></li>
+
+                        <li><a href="testphp.php" target="blank">file handling</a></li>
+
                         <li><a href="db-connect.php" target="blank">dbconnect</a></li>
+                        <li><a href="form.php" target="blank">Form</a></li>
+
                           
                     </ul>
                 </li>
@@ -69,7 +77,7 @@ and open the template in the editor.
            
 
         <div>
-            <form  action="db-connect.php" method="POST"  name="myform" onsubmit="return(validation());">
+            <form  action="action.php" method="POST"  name="myform" onsubmit="return(validation());">
           
             
             
