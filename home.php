@@ -11,7 +11,12 @@ and open the template in the editor.
     </head>
     <body>
         <?php
-     echo "$_GET[contactno]";
+     $connect = mysqli_connect("localhost","root","","admission")or die("unable to connect");
+       echo"connected Successfully";
+       $sql = "INSERT INTO 'form'(Name,Father-name,contact,cnic)values(null,'".$_REQUEST['name']."' , '".$_REQUEST['fname']."' , '".$_REQUEST['contactno']."' , '".$_REQUEST['cnic']."')";
+       
+       mysqli_query($sql,$connect);
+       
         ?>
     </body>
 </html>
