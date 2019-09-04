@@ -29,7 +29,7 @@
      if($connect->connect_error){
          die("connection Failed :".$connect->connect_error);
      } else {
-     $stmt = $connect->prepare("INSERT INTO admission_applicant(Name,fname,user_id,id_password,email_id,Address,contact_no,country,gender)values(?,?,?,?,?,?,?,?,?)");
+     $stmt = $connect->prepare("INSERT INTO applicant(Name,fname,user_id,id_password,email_id,Address,contact_no,country,gender)values(?,?,?,?,?,?,?,?,?)");
      $stmt->bind_param("ssssssiss",$Name,$fname,$userid,$idpassword,$emailid,$Address,$contact_no,$country,$gender);
      $stmt->execute();
      echo"Registered Successfully...";
