@@ -87,7 +87,7 @@ and open the template in the editor.
                 </div>
                 <label class="col-md-2" for="contact">Contact</label>
                 <div class="col-md-4">
-                    <input name="contactno" type="text" id="focusedInput" class="form-control"  placeholder="enter name">
+                    <input name="contactno" type="text" id="focusedInput" class="form-control"  placeholder="enter phone no">
                 </div>
                   <label class="col-md-2" for="cnic">CNIC No</label>
                 <div class="col-md-4">
