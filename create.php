@@ -1,6 +1,6 @@
 <?php
 // Include config file
-require_once "02DB-Connection.php";
+require_once "connect.php";
  
 // Define variables and initialize with empty values
 $name= $fathername= $contactno = $cnic = "";
@@ -19,7 +19,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     }
     
     // Validate fname
-    $input_fathername = trim($_POST["fname"]);
+    $input_fathername = trim($_POST["fathername"]);
     if(empty($input_fathername)){
         $fathername_err = "Please enter an father Name.";
     } elseif(!filter_var($input_fathername, FILTER_VALIDATE_REGEXP, array("options"=>array("regexp"=>"/^[a-zA-Z\s]+$/")))){
@@ -29,44 +29,44 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     }
     
     // Validate salary
-    $input_contactno = trim($_POST["contactno"]);
-    if(empty($input_contactno)){
-        $contactno_err = "Please enter the Correct no.";     
-    } elseif(!ctype_digit($input_contactno)){
-        $contactno_err = "Please enter a correct format.";
+    $input_contact = trim($_POST["contact"]);
+    if(empty($input_contact)){
+        $contact_err = "Please enter the Correct no.";     
+    } elseif(!ctype_digit($input_contact)){
+        $contact_err = "Please enter a correct format.";
     } else{
-        $contactno = $input_contactno;
+        $contact = $input_contact;
        
     }
      //cnic no 
     $input_cnic = trim($_POST["cnic"]);
-    if(empty($input_contactno)){
+    if(empty($input_cnic)){
         $cnic_err = "Please enter the Correct cnic no.";     
-    } elseif(!ctype_digit($input_contactno)){
+    } elseif(!ctype_digit($input_cnic)){
         $cnic_err = "Please enter a correct format.";
     } else{
       $cnic = $input_cnic;
     }
     
     // Check input errors before inserting in database
-    if(empty($name_err) && empty($fathername_err) && empty($contactno_err && empty($cnic_err))){
+    if(empty($name_err) && empty($fathername_err) && empty($contact_err && empty($cnic_err))){
         // Prepare an insert statement
-        $sql = "INSERT INTO form (Name, Father-name, Contact,Cnic) VALUES (?, ?, ?,?)";
+        $sql = "INSERT INTO form (name, fathername, contact,cnic) VALUES (?, ?, ?,?)";
          
         if($stmt = mysqli_prepare($connect, $sql)){
             // Bind variables to the prepared statement as parameters
-            mysqli_stmt_bind_param($stmt, "ssss", $param_name, $param_fathername, $param_contactno, $param_cnic);
+            mysqli_stmt_bind_param($stmt, "ssss", $param_name, $param_fathername, $param_contact, $param_cnic);
             
             // Set parameters
             $param_name = $name;
             $param_fathername = $fathername;
-            $param_contactno = $contactno;
+            $param_contact = $contact;
             $param_cnic = $cnic;
             
             // Attempt to execute the prepared statement
             if(mysqli_stmt_execute($stmt)){
                 // Records created successfully. Redirect to landing page
-                header("location: Select.php");
+                header("location: index.php");
                 exit();
             } else{
                 echo "Something went wrong. Please try again later.";
@@ -114,8 +114,8 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             <div class="">
             <ul class="nav navbar-nav nav-pills">
                 <li class="active"><a href="form.php" target="_self">Home</a></li>
-                <li><a href="Select.php" target="_self">SELECT</a></li>
-                <li><a href="04Update.php" target="_self">UPDATE</a></li>
+                <li><a href="index.php" target="_self">SELECT</a></li>
+                <li><a href="update.php" target="_self">UPDATE</a></li>
                 <li><a href="read.php" target="_self">READ</a></li>
                 
             </ul>
@@ -142,11 +142,11 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                 </div>
                 <label class="col-md-2" for="fname">Father Name</label>
                 <div class="col-md-4">
-                    <input name="fname" type="text" id="focusedInput" class="form-control"  placeholder="enter father name">
+                    <input name="fathername" type="text" id="focusedInput" class="form-control"  placeholder="enter father name">
                 </div>
                 <label class="col-md-2" for="contact">Contact</label>
                 <div class="col-md-4">
-                    <input name="contactno" type="text" id="focusedInput" class="form-control"  placeholder="enter phone no">
+                    <input name="contact" type="text" id="focusedInput" class="form-control"  placeholder="enter phone no">
                 </div>
                   <label class="col-md-2" for="cnic">CNIC No</label>
                 <div class="col-md-4">
@@ -155,11 +155,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                  </div>
                
                 </div>
-                
-                   </form>
-                   
-        </div>
-            <div class=" col-md-12 btnm">
+                <div class=" col-md-12 btnm">
                 <diV>
                  <button type="submit" class="btn btn-primary btnm">Submit   </button>
           
@@ -168,7 +164,11 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                     <button type="reset" class="btn btn-primary btn-danger btnm   "> Reset  </button> 
                 </div> 
             </div>
-        </form> 
+                   </form>
+                   
+        </div>
+            
+        
        
         
           

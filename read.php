@@ -2,7 +2,7 @@
 // Check existence of id parameter before processing further
 if(isset($_GET["id"]) && !empty(trim($_GET["id"]))){
     // Include config file
-    require_once "02DB-Connection.php";
+    require_once "connect.php";
     
     // Prepare a select statement
     $sql = "SELECT * FROM form WHERE id = ?";
@@ -12,7 +12,7 @@ if(isset($_GET["id"]) && !empty(trim($_GET["id"]))){
         mysqli_stmt_bind_param($stmt, "i", $param_id);
         
         // Set parameters
-        $param_id = trim($_GET["ID"]);
+        $param_id = trim($_GET["id"]);
         
         // Attempt to execute the prepared statement
         if(mysqli_stmt_execute($stmt)){
@@ -24,9 +24,10 @@ if(isset($_GET["id"]) && !empty(trim($_GET["id"]))){
                 $row = mysqli_fetch_array($result, MYSQLI_ASSOC);
                 
                 // Retrieve individual field value
-                $name = $row["Name"];
-                $address = $row["Fathername"];
-                $salary = $row["Contact"];
+                $name = $row["name"];
+                $fathername = $row["fathername"];
+                $contact = $row["contact"];
+                $cnic = $row["cnic"];
             } else{
                 // URL doesn't contain valid id parameter. Redirect to error page
                 header("location: error.php");
@@ -53,6 +54,39 @@ if(isset($_GET["id"]) && !empty(trim($_GET["id"]))){
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+      <link href = "jqueryUi/jquery-ui-lightness.css" type="text/css" rel = "stylesheet">
+        <script src = "jqueryUi/jquery1.10.2-js.js" type="text/javascript"></script>
+        <script src = "jqueryUi/jquery-ui-js.js" type="text/javascript"></script>
+          <meta name = "viewport" content = "width = device-width, initial-scale = 1.0">
+       
+        <script src = "script/jquery-min-js.js"></script>
+        <script src = "script/bootstap-min-js.js"></script>
+                  <link href = "bootstrap/bootstrapCSS.css" rel = "stylesheet" type="text/css">
+                  <link href = "Css/style.css" rel = "stylesheet" type="text/css">
+                  <link rel="stylesheet" type="text/css" href="Css/w3.css">
+                  <link rel="stylesheet" type="text/css" href="Css/colors.css">
+            <div class="head img-responsive">
+           
+            <img src="images/photog1.png" width="150px" height="auto"  style="max-width: 100%">
+         
+        </div>
+    
+    
+    
+        
+        
+        <nav class="col-md-6 navmargin">
+            
+            <div class="">
+            <ul class="nav navbar-nav nav-pills">
+                <li class="active"><a href="form.php" target="_self">Home</a></li>
+                <li><a href="index.php" target="_self">SELECT</a></li>
+                <li><a href="update.php" target="_self">UPDATE</a></li>
+                <li><a href="read.php" target="_self">READ</a></li>
+                
+            </ul>
+        </div>
+        </nav>
     <title>View Record</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.css">
     <style type="text/css">
@@ -62,25 +96,29 @@ if(isset($_GET["id"]) && !empty(trim($_GET["id"]))){
         }
     </style>
 </head>
-<body>
+<body class="container" background="images/fabric1.png">
     <div class="wrapper">
         <div class="container-fluid">
             <div class="row">
                 <div class="col-md-12">
                     <div class="page-header">
-                        <h1>View Record</h1>
+                        <h1 style="color:slateblue; background-color: sandybrown;"><i>View Record</i></h1>
                     </div>
                     <div class="form-group">
-                        <label>Name</label>
-                        <p class="form-control-static"><?php echo $row["name"]; ?></p>
+                        <label style="color:seagreen;">Name</label>
+                        <p class="form-control-static" style="color:orange; "><?php echo $row["name"]; ?></p>
                     </div>
                     <div class="form-group">
-                        <label>Address</label>
-                        <p class="form-control-static"><?php echo $row["address"]; ?></p>
+                        <label style="color:seagreen;" >Father name</label>
+                        <p class="form-control-static" style="color:orange;"><?php echo $row["fathername"]; ?></p>
                     </div>
                     <div class="form-group">
-                        <label>Salary</label>
-                        <p class="form-control-static"><?php echo $row["salary"]; ?></p>
+                        <label style="color:seagreen;">Contact</label>
+                        <p class="form-control-static" style="color:orange;"><?php echo $row["contact"]; ?></p>
+                    </div>
+                    <div class="form-group">
+                        <label style="color:seagreen;">Cnic</label>
+                        <p class="form-control-static" style="color:orange;"><?php echo $row["cnic"]; ?></p>
                     </div>
                     <p><a href="index.php" class="btn btn-primary">Back</a></p>
                 </div>
