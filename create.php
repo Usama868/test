@@ -18,10 +18,12 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         $name = $input_name;
     }
     
-    // Validate address
+    // Validate fname
     $input_fathername = trim($_POST["fname"]);
-    if(empty($input_address)){
-        $fathername_err = "Please enter an father Name.";     
+    if(empty($input_fathername)){
+        $fathername_err = "Please enter an father Name.";
+    } elseif(!filter_var($input_fathername, FILTER_VALIDATE_REGEXP, array("options"=>array("regexp"=>"/^[a-zA-Z\s]+$/")))){
+        $fathername_err = "Please enter a valid father name.";
     } else{
         $fathername = $input_fathername;
     }
@@ -34,7 +36,9 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         $contactno_err = "Please enter a correct format.";
     } else{
         $contactno = $input_contactno;
-        //cnic no 
+       
+    }
+     //cnic no 
     $input_cnic = trim($_POST["cnic"]);
     if(empty($input_contactno)){
         $cnic_err = "Please enter the Correct cnic no.";     
@@ -45,23 +49,24 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     }
     
     // Check input errors before inserting in database
-    if(empty($name_err) && empty($address_err) && empty($salary_err)){
+    if(empty($name_err) && empty($fathername_err) && empty($contactno_err && empty($cnic_err))){
         // Prepare an insert statement
-        $sql = "INSERT INTO employees (name, address, salary) VALUES (?, ?, ?)";
+        $sql = "INSERT INTO form (Name, Father-name, Contact,Cnic) VALUES (?, ?, ?,?)";
          
         if($stmt = mysqli_prepare($connect, $sql)){
             // Bind variables to the prepared statement as parameters
-            mysqli_stmt_bind_param($stmt, "sss", $param_name, $param_address, $param_salary);
+            mysqli_stmt_bind_param($stmt, "ssss", $param_name, $param_fathername, $param_contactno, $param_cnic);
             
             // Set parameters
             $param_name = $name;
-            $param_address = $address;
-            $param_salary = $salary;
+            $param_fathername = $fathername;
+            $param_contactno = $contactno;
+            $param_cnic = $cnic;
             
             // Attempt to execute the prepared statement
             if(mysqli_stmt_execute($stmt)){
                 // Records created successfully. Redirect to landing page
-                header("location: index.php");
+                header("location: Select.php");
                 exit();
             } else{
                 echo "Something went wrong. Please try again later.";
@@ -98,7 +103,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                     <div class="page-header">
                         <h2>Create Record</h2>
                     </div>
-                    <p>Please fill this form and submit to add employee record to the database.</p>
+                    <p>Please fill this form and submit to add User record to the database.</p>
                     <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
                         <div class="form-group <?php echo (!empty($name_err)) ? 'has-error' : ''; ?>">
                             <label>Name</label>
@@ -107,7 +112,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                         </div>
                         <div class="form-group <?php echo (!empty($fathername)) ? 'has-error' : ''; ?>">
                             <label>Father Name</label>
-                            <textarea name="fname" class="form-control"><?php echo $fathername; ?></textarea>
+                            <input name="fname" class="form-control"><?php echo $fathername; ?>
                             <span class="help-block"><?php echo $fathername_err;?></span>
                         </div>
                         <div class="form-group <?php echo (!empty($contactno_err)) ? 'has-error' : ''; ?>">
@@ -121,7 +126,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                             <span class="help-block"><?php echo $cnic_err;?></span>
                         </div>
                         <input type="submit" class="btn btn-primary" value="Submit">
-                        <a href="index.php" class="btn btn-default">Cancel</a>
+                        <a href="" class="btn btn-default">Cancel</a>
                     </form>
                 </div>
             </div>        
