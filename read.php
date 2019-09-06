@@ -1,18 +1,18 @@
 <?php
 // Check existence of id parameter before processing further
-if(isset($_GET["ID"]) && !empty(trim($_GET["ID"]))){
+if(isset($_GET["id"]) && !empty(trim($_GET["id"]))){
     // Include config file
     require_once "02DB-Connection.php";
     
     // Prepare a select statement
-    $sql = "SELECT * FROM form WHERE ID = ?";
+    $sql = "SELECT * FROM form WHERE id = ?";
     
     if($stmt = mysqli_prepare($connect, $sql)){
         // Bind variables to the prepared statement as parameters
-        mysqli_stmt_bind_param($stmt, "i", $param_ID);
+        mysqli_stmt_bind_param($stmt, "i", $param_id);
         
         // Set parameters
-        $param_ID = trim($_GET["ID"]);
+        $param_id = trim($_GET["ID"]);
         
         // Attempt to execute the prepared statement
         if(mysqli_stmt_execute($stmt)){
@@ -24,11 +24,9 @@ if(isset($_GET["ID"]) && !empty(trim($_GET["ID"]))){
                 $row = mysqli_fetch_array($result, MYSQLI_ASSOC);
                 
                 // Retrieve individual field value
-                $ID = $row["ID"];
-                $Name = $row["Name"];
-                $fathername = $row["Father-name"];
-                $contactno = $row["Contact"];
-                $cnic = $row["Cnic"];
+                $name = $row["Name"];
+                $address = $row["Fathername"];
+                $salary = $row["Contact"];
             } else{
                 // URL doesn't contain valid id parameter. Redirect to error page
                 header("location: error.php");
@@ -65,18 +63,6 @@ if(isset($_GET["ID"]) && !empty(trim($_GET["ID"]))){
     </style>
 </head>
 <body>
-     <nav class="col-md-6 navmargin">
-            
-            <div class="">
-            <ul class="nav navbar-nav nav-pills">
-                <li class="active"><a href="form.php" target="_self">Home</a></li>
-                <li><a href="Select.php" target="_self">SELECT</a></li>
-                <li><a href="04Update.php" target="_self">UPDATE</a></li>
-                <li><a href="read.php" target="_self">READ</a></li>
-                
-            </ul>
-        </div>
-        </nav>
     <div class="wrapper">
         <div class="container-fluid">
             <div class="row">
@@ -86,21 +72,17 @@ if(isset($_GET["ID"]) && !empty(trim($_GET["ID"]))){
                     </div>
                     <div class="form-group">
                         <label>Name</label>
-                        <p class="form-control-static"><?php echo $row["Name"]; ?></p>
+                        <p class="form-control-static"><?php echo $row["name"]; ?></p>
                     </div>
                     <div class="form-group">
-                        <label>Father Name</label>
-                        <p class="form-control-static"><?php echo $row["Father-name"]; ?></p>
+                        <label>Address</label>
+                        <p class="form-control-static"><?php echo $row["address"]; ?></p>
                     </div>
                     <div class="form-group">
-                        <label>Contact</label>
-                        <p class="form-control-static"><?php echo $row["Contact"]; ?></p>
+                        <label>Salary</label>
+                        <p class="form-control-static"><?php echo $row["salary"]; ?></p>
                     </div>
-                    <div class="form-group">
-                        <label>Cnic</label>
-                        <p class="form-control-static"><?php echo $row["Cnic"]; ?></p>
-                    </div>
-                    <p><a href="Select.php" class="btn btn-primary">Back</a></p>
+                    <p><a href="index.php" class="btn btn-primary">Back</a></p>
                 </div>
             </div>        
         </div>

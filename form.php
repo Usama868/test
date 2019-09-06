@@ -68,7 +68,7 @@ and open the template in the editor.
                 </div>
                   <label class="col-md-2" for="cnic">CNIC No</label>
                 <div class="col-md-4">
-                    <input name="cnic" type="text" id="focusedInput" name="cnic" placeholder="enter cnic no" class="form-control">
+                    <input name="cnic" type="text" id="focusedInput"  placeholder="enter cnic no" class="form-control">
                     
                  </div>
                

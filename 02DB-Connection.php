@@ -12,9 +12,9 @@ and open the template in the editor.
     <body>
         <?php
       $localhost = "localhost"; 
-$username = "root"; 
-$password = ""; 
-$dbname = "admission"; 
+    $username = "root"; 
+    $password = ""; 
+    $dbname = "admission"; 
  
 // create connection 
 $connect = new mysqli($localhost, $username, $password, $dbname); 

@@ -3,8 +3,8 @@
 require_once "02DB-Connection.php";
  
 // Define variables and initialize with empty values
-$Name = $fathername = $contactno = $cnic = "";
-$Name_err = $fathername_err = $contactno_err = $cnic_err = "";
+$name = $fathername = $contactno = $cnic = "";
+$name_err = $fathername_err = $contactno_err = $cnic_err = "";
  
 // Processing form data when form is submitted
 if(isset($_POST["ID"]) && !empty($_POST["ID"])){
@@ -121,7 +121,7 @@ if(isset($_POST["ID"]) && !empty($_POST["ID"])){
         }
         
         // Close statement
-        mysqli_stmt_close($stmt);
+        $mysqli_stmt_close = mysqli_stmt_close($stmt);
         
         // Close connection
         mysqli_close($connect);
