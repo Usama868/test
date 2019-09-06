@@ -4,25 +4,25 @@ require_once "02DB-Connection.php";
  
 // Define variables and initialize with empty values
 $name = $fathername = $contactno = $cnic = "";
-$name_err = $fathername_err = $contactno_err = $cnic_err = "";
+$name_err = $fathername_err = $contact_err = $cnic_err = "";
  
 // Processing form data when form is submitted
-if(isset($_POST["ID"]) && !empty($_POST["ID"])){
+if(isset($_POST["id"]) && !empty($_POST["id"])){
     // Get hidden input value
-    $ID = $_POST["ID"];
+    $ID = $_POST["id"];
     
     // Validate name
-    $input_Name = trim($_POST["Name"]);
-    if(empty($input_Name)){
-        $Name_err = "Please enter a name.";
-    } elseif(!filter_var($input_Name, FILTER_VALIDATE_REGEXP, array("options"=>array("regexp"=>"/^[a-zA-Z\s]+$/")))){
-        $Name_err = "Please enter a valid name.";
+    $input_name = trim($_POST["name"]);
+    if(empty($input_name)){
+        $name_err = "Please enter a name.";
+    } elseif(!filter_var($input_name, FILTER_VALIDATE_REGEXP, array("options"=>array("regexp"=>"/^[a-zA-Z\s]+$/")))){
+        $name_err = "Please enter a valid name.";
     } else{
-        $Name = $input_Name;
+        $name = $input_name;
     }
     
     // Validate father name
-    $input_fathername = trim($_POST["fname"]);
+    $input_fathername = trim($_POST["fathername"]);
     if(empty($input_fathername)){
         $address_err = "Please enter an fathername.";     
     } else{
@@ -30,18 +30,18 @@ if(isset($_POST["ID"]) && !empty($_POST["ID"])){
     }
     
     // Validate contact no
-    $input_contactno = trim($_POST["contactno"]);
-    if(empty($input_contactno)){
-        $contactno_err = "Please enter the contact no.";     
-    } elseif(!ctype_digit($input_contactno)){
-        $contactno_err = "Please enter a correct No.";
+    $input_contact = trim($_POST["contact"]);
+    if(empty($input_contact)){
+        $contact_err = "Please enter the contact no.";     
+    } elseif(!ctype_digit($input_contact)){
+        $contact_err = "Please enter a correct No.";
     } else{
-        $contactno = $input_contactno;
+        $contact = $input_contact;
     }
     // Validate cnic no
     $input_cnic = trim($_POST["cnic"]);
     if(empty($input_cnic)){
-        $cnic_err = "Please enter the contact no.";     
+        $cnic_err = "Please enter the cnic.";     
     } elseif(!ctype_digit($input_cnic)){
         $cnic_err = "Please enter a correct cnic No.";
     } else{
@@ -49,20 +49,20 @@ if(isset($_POST["ID"]) && !empty($_POST["ID"])){
     }
     
     // Check input errors before inserting in database
-    if(empty($Name_err) && empty($fathername_err) && empty($contactno_err) && empty($cnic_err)){
+    if(empty($name_err) && empty($fathername_err) && empty($contact_err) && empty($cnic_err)){
         // Prepare an update statement
-        $sql = "UPDATE form SET Name=?, Father-name=?, Contact=?, Cnic=? WHERE ID=?";
+        $sql = "UPDATE form SET name=?, fathername=?, contact=?, cnic=? WHERE id=?";
          
         if($stmt = mysqli_prepare($connect, $sql)){
             // Bind variables to the prepared statement as parameters
-            mysqli_stmt_bind_param($stmt, "sssi", $param_Name, $param_fathername, $param_contactno, $param_cnic, $param_ID);
+            mysqli_stmt_bind_param($stmt, "ssii", $param_name, $param_fathername, $param_contact, $param_cnic, $param_id);
             
             // Set parameters
-            $param_Name = $Name;
+            $param_name = $name;
             $param_fathername = $fathername;
-            $param_contactno = $contactno;
+            $param_contact = $contact;
             $param_cnic = $cnic;
-            $param_ID = $ID;
+            $param_id = $id;
             
             // Attempt to execute the prepared statement
             if(mysqli_stmt_execute($stmt)){
@@ -82,18 +82,18 @@ if(isset($_POST["ID"]) && !empty($_POST["ID"])){
     mysqli_close($connect);
 } else{
     // Check existence of id parameter before processing further
-    if(isset($_GET["id"]) && !empty(trim($_GET["id"]))){
+    if(isset($_POST["id"]) && !empty(trim($_POST["id"]))){
         // Get URL parameter
-        $id =  trim($_GET["id"]);
+        $ID =  trim($_POST["id"]);
         
         // Prepare a select statement
-        $sql = "SELECT * FROM form WHERE ID = ?";
+        $sql = "SELECT * FROM form WHERE id = ?";
         if($stmt = mysqli_prepare($connect, $sql)){
             // Bind variables to the prepared statement as parameters
-            mysqli_stmt_bind_param($stmt, "i", $param_ID);
+            mysqli_stmt_bind_param($stmt, "i", $param_id);
             
             // Set parameters
-            $param_ID = $ID;
+            $param_id = $id;
             
             // Attempt to execute the prepared statement
             if(mysqli_stmt_execute($stmt)){
@@ -105,10 +105,10 @@ if(isset($_POST["ID"]) && !empty($_POST["ID"])){
                     $row = mysqli_fetch_array($result, MYSQLI_ASSOC);
                     
                     // Retrieve individual field value
-                    $Name = $row["Name"];
-                    $fathername = $row["Father-name"];
-                    $contactno = $row["Contact"];
-                    $cnic = $row["Cnic"];
+                    $name = $row["name"];
+                    $fathername = $row["fathername"];
+                    $contactno = $row["contact"];
+                    $cnic = $row["cnic"];
                 } else{
                     // URL doesn't contain valid id. Redirect to error page
                     header("location: error.php");
@@ -168,27 +168,34 @@ if(isset($_POST["ID"]) && !empty($_POST["ID"])){
                     </div>
                     <p>Please edit the input values and submit to update the record.</p>
                     <form action="<?php echo htmlspecialchars(basename($_SERVER['REQUEST_URI'])); ?>" method="post">
-                        <div class="form-group <?php echo (!empty($Name_err)) ? 'has-error' : ''; ?>">
-                            <label>Name</label>
-                            <input type="text" name="Name" class="form-control" value="<?php echo $Name; ?>">
-                            <span class="help-block"><?php echo $Name_err;?></span>
-                        </div>
-                        <div class="form-group <?php echo (!empty($fathername_err)) ? 'has-error' : ''; ?>">
-                            <label>Father-Name</label>
-                            <textarea name="fname" class="form-control"><?php echo $fathername; ?></textarea>
-                            <span class="help-block"><?php echo $fathername_err;?></span>
-                        </div>
-                        <div class="form-group <?php echo (!empty($contactno_err)) ? 'has-error' : ''; ?>">
-                            <label>Contact</label>
-                            <input type="text" name="contactno" class="form-control" value="<?php echo $contactno; ?>">
-                            <span class="help-block"><?php echo $contactno_err;?></span>
-                        </div>
-                        <div class="form-group <?php echo (!empty($cnic_err)) ? 'has-error' : ''; ?>">
-                            <label>Cnic</label>
-                            <input type="text" name="cnic" class="form-control" value="<?php echo $cnic; ?>">
-                            <span class="help-block"><?php echo $cnic_err;?></span>
-                        </div>
-                        <input type="hidden" name="ID" value="<?php echo $ID; ?>"/>
+                     
+                        
+                         <div class="form-group">
+                <label class="col-md-2" for=Name">Name</label>
+                         </div>
+                <div class="col-md-4 <?php echo (!empty($name_err)) ? 'has-error' : ''; ?>">
+                    <input name="name" type="text" id="focusedInput" class="form-control"   placeholder="enter name" value="<?php echo $name; ?>">
+                    <span class="help-block"><?php echo $name_err;?></span>
+                </div>
+                        
+                        <Div> <label class="col-md-2" for="fname">Father Name</label></div>
+                <div class="col-md-4 <?php echo (!empty($fathername_err)) ? 'has-error' : ''; ?>">
+                    <input name="fname" type="text" id="focusedInput" class="form-control"  placeholder="enter father name" value="<?php echo $fathername; ?>">
+                     <span class="help-block"><?php echo $fathername_err;?></span>
+                </div>
+                        <div><label class="col-md-2" for="contact">Contact</label></div>
+                <div class="col-md-4 <?php echo (!empty($contact_err)) ? 'has-error' : ''; ?>">
+                    <input name="contactno" type="text" id="focusedInput" class="form-control"  placeholder="enter phone no" value="<?php echo $contact; ?>">
+                      <span class="help-block"><?php echo $contactno_err;?></span>
+                </div>
+                        <div><label class="col-md-2" for="cnic">CNIC No</label></div>
+                <div class="col-md-4 <?php echo (!empty($cnic_err)) ? 'has-error' : ''; ?>">
+                    <input name="cnic" type="text" id="focusedInput"  placeholder="enter cnic no" class="form-control" value="<?php echo $cnic; ?>">
+                    <span class="help-block"><?php echo $cnic_err;?></span>
+                 </div>
+               
+                </div>
+                        <input type="hidden" name="id" value="<?php echo $id; ?>"/>
                         <input type="submit" class="btn btn-primary" value="Submit">
                         <a href="index.php" class="btn btn-default">Cancel</a>
                     </form>

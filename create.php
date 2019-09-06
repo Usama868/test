@@ -83,54 +83,104 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 ?>
  
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Create Record</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.css">
-    <style type="text/css">
-        .wrapper{
-            width: 500px;
-            margin: 0 auto;
-        }
-    </style>
-</head>
-<body>
-    <div class="wrapper">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="page-header">
-                        <h2>Create Record</h2>
-                    </div>
-                    <p>Please fill this form and submit to add User record to the database.</p>
-                    <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
-                        <div class="form-group <?php echo (!empty($name_err)) ? 'has-error' : ''; ?>">
-                            <label>Name</label>
-                            <input type="text" name="name" class="form-control" value="<?php echo $name; ?>">
-                            <span class="help-block"><?php echo $name_err;?></span>
-                        </div>
-                        <div class="form-group <?php echo (!empty($fathername)) ? 'has-error' : ''; ?>">
-                            <label>Father Name</label>
-                            <input name="fname" class="form-control"><?php echo $fathername; ?>
-                            <span class="help-block"><?php echo $fathername_err;?></span>
-                        </div>
-                        <div class="form-group <?php echo (!empty($contactno_err)) ? 'has-error' : ''; ?>">
-                            <label>Contact#</label>
-                            <input type="text" name="contactno" class="form-control" value="<?php echo $contactno; ?>">
-                            <span class="help-block"><?php echo $contactno_err;?></span>
-                        </div>
-                        <div class="form-group <?php echo (!empty($cnic_err)) ? 'has-error' : ''; ?>">
-                            <label>Cnic#</label>
-                            <input type="text" name="cnic" class="form-control" value="<?php echo $cnic; ?>">
-                            <span class="help-block"><?php echo $cnic_err;?></span>
-                        </div>
-                        <input type="submit" class="btn btn-primary" value="Submit">
-                        <a href="" class="btn btn-default">Cancel</a>
-                    </form>
-                </div>
-            </div>        
+<html>
+     
+    <head>
+        <meta charset="UTF-8">
+        
+        <link href = "jqueryUi/jquery-ui-lightness.css" type="text/css" rel = "stylesheet">
+        <script src = "jqueryUi/jquery1.10.2-js.js" type="text/javascript"></script>
+        <script src = "jqueryUi/jquery-ui-js.js" type="text/javascript"></script>
+          <meta name = "viewport" content = "width = device-width, initial-scale = 1.0">
+        <title>25-7-19</title>
+        <script src = "script/jquery-min-js.js"></script>
+        <script src = "script/bootstap-min-js.js"></script>
+                  <link href = "bootstrap/bootstrapCSS.css" rel = "stylesheet" type="text/css">
+                  <link href = "Css/style.css" rel = "stylesheet" type="text/css">
+                  <link rel="stylesheet" type="text/css" href="Css/w3.css">
+                  <link rel="stylesheet" type="text/css" href="Css/colors.css">
+            <div class="head img-responsive">
+           
+            <img src="images/photog1.png" width="150px" height="auto"  style="max-width: 100%">
+         
         </div>
-    </div>
-</body>
+    
+    </head>
+    <body class="background container" background="images/fabric1.png">
+        
+        
+        <nav class="col-md-6 navmargin">
+            
+            <div class="">
+            <ul class="nav navbar-nav nav-pills">
+                <li class="active"><a href="form.php" target="_self">Home</a></li>
+                <li><a href="Select.php" target="_self">SELECT</a></li>
+                <li><a href="04Update.php" target="_self">UPDATE</a></li>
+                <li><a href="read.php" target="_self">READ</a></li>
+                
+            </ul>
+        </div>
+        </nav>
+       
+       
+        
+    
+     
+      
+        <div class="col-md-12">
+            <h2>Create Record</h2>
+                   <p>Please fill this form and submit to add User record to the database.</p>
+                   <br/>
+                   
+                    <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
+            
+            
+            <div class="form-group">
+                <label class="col-md-2" for=Name">Name</label>
+                <div class="col-md-4">
+                    <input name="name" type="text" id="focusedInput" class="form-control"   placeholder="enter name">
+                </div>
+                <label class="col-md-2" for="fname">Father Name</label>
+                <div class="col-md-4">
+                    <input name="fname" type="text" id="focusedInput" class="form-control"  placeholder="enter father name">
+                </div>
+                <label class="col-md-2" for="contact">Contact</label>
+                <div class="col-md-4">
+                    <input name="contactno" type="text" id="focusedInput" class="form-control"  placeholder="enter phone no">
+                </div>
+                  <label class="col-md-2" for="cnic">CNIC No</label>
+                <div class="col-md-4">
+                    <input name="cnic" type="text" id="focusedInput"  placeholder="enter cnic no" class="form-control">
+                    
+                 </div>
+               
+                </div>
+                
+                   </form>
+                   
+        </div>
+            <div class=" col-md-12 btnm">
+                <diV>
+                 <button type="submit" class="btn btn-primary btnm">Submit   </button>
+          
+             
+      
+                    <button type="reset" class="btn btn-primary btn-danger btnm   "> Reset  </button> 
+                </div> 
+            </div>
+        </form> 
+       
+        
+          
+          
+      
+                    
+     
+             
+        <div class="img-responsive" align="center">
+             
+             <img src="images/copyright.png" class="copyright">
+                        </div>
+    </body>
 </html>
+ 

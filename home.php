@@ -13,12 +13,12 @@ and open the template in the editor.
         <?php
         require_once "02DB-Connection.php";
        
-       $Name = $_POST['name'];
-       $fathername = $_POST['fname'];
-       $contactno = $_POST['contactno'];
+       $name = $_POST['name'];
+        $fathername = $_POST['fathername'];
+       $contact = $_POST['contact'];
        $cnic = $_POST['cnic'];
        
-       $sql = "INSERT INTO `form` (`ID`, `Name`, `Father-name`, `Contact`, `Cnic`) VALUES (NULL,'$Name' , '$fathername' , '$contactno' , '$cnic')";
+       $sql = "INSERT INTO `form` (`id`, `name`, `fathername`, `contact`, `cnic`) VALUES (NULL,'$name' , '$fathername' , '$contact' , '$cnic')";
        if ($connect->query($sql) === TRUE) {
     echo "New record created successfully";
 } else {
