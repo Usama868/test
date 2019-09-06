@@ -35,34 +35,11 @@ and open the template in the editor.
             
             <div class="">
             <ul class="nav navbar-nav nav-pills">
-                <li class="active"><a href="index.php" target="_self">Home</a></li>
-                <li><a href="about.php" target="_self">About</a></li>
-                <li class="dropdown">
-                    <a  class="dropdown-toggle" data-toggle="dropdown">
-                     Project's 1
-                        <span class="caret"></span>
-                    </a>
-                    <ul class="dropdown-menu">
-                        <li><a href="24-7-19bootstrap.php" target="_blank">24-7-19</a></li>
-                        <li><a href="25-7-19.php" target="_blank">25-7-19</a></li>
-                        <li><a href="bootstrap.php" target="_self">26-7-19</a></li>
-                        <li><a href="#" target="_blank">232131</a></li>
-                          
-                    </ul>
-                </li>
-                  <li class="dropdown">
-                    <a  class="dropdown-toggle" data-toggle="dropdown">
-                     Project's 2
-                        <span class="caret"></span>
-                    </a>
-                    <ul class="dropdown-menu">
-                        <li><a href="24-7-19bootstrap.php" target="_blank">24-7-19</a></li>
-                        <li><a href="25-7-19.php" target="blank">25-7-19</a></li>
-                        <li><a href="bootstrap.php" target="_self">26-7-19</a></li>
-                        <li><a href="#" target="blank">232131</a></li>
-                          
-                    </ul>
-                </li>
+                <li class="active"><a href="form.php" target="_self">Home</a></li>
+                <li><a href="Select.php" target="_self">SELECT</a></li>
+                <li><a href="04Update.php" target="_self">UPDATE</a></li>
+                <li><a href="read.php" target="_self">READ</a></li>
+                
             </ul>
         </div>
         </nav>
@@ -73,7 +50,7 @@ and open the template in the editor.
      
       
         <div class="col-md-12">
-            <form method="GET" action="home.php" class="form-horizontal" role="form">
+            <form method="POST" action="home.php" class="form-horizontal" role="form">
             
             
             <div class="form-group">
@@ -100,7 +77,7 @@ and open the template in the editor.
            
                    
         </div>
-            <div class=" col-md-4 btn-group btnm">
+            <div class=" col-md-12 btnm">
                 <diV>
                  <button type="submit" class="btn btn-primary btnm">Submit   </button>
           

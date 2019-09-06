@@ -11,24 +11,23 @@ and open the template in the editor.
     </head>
     <body>
         <?php
-     $dbconnect = mysqli_connect("localhost","root","","admission")or die("unable to connect");
-       echo"connected Successfully";
+        require_once "02DB-Connection.php";
        
-       $Name = $_GET['name'];
-       $fathername = $_GET['fname'];
-       $contactno = $_GET['contactno'];
-       $cnic = $_GET['cnic'];
+       $Name = $_POST['name'];
+       $fathername = $_POST['fname'];
+       $contactno = $_POST['contactno'];
+       $cnic = $_POST['cnic'];
        
        $sql = "INSERT INTO `form` (`ID`, `Name`, `Father-name`, `Contact`, `Cnic`) VALUES (NULL,'$Name' , '$fathername' , '$contactno' , '$cnic')";
-       if ($dbconnect->query($sql) === TRUE) {
+       if ($connect->query($sql) === TRUE) {
     echo "New record created successfully";
 } else {
-    echo "Error: " . $sql . "<br>" . $dbconnect->error;
+    echo "Error: " . $sql . "<br>" . $connect->error;
 }
 
-$dbconnect->close();
+$connect->close();
       
        
         ?>
-    </body>
+           </body>
 </html>

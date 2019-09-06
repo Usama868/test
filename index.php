@@ -64,8 +64,23 @@ and open the template in the editor.
                         <li><a href="testphp.php" target="blank">file handling</a></li>
 
                         <li><a href="db-connect.php" target="blank">dbconnect</a></li>
-                        <li><a href="form.php" target="blank">Form</a></li>
+                       
 
+                          
+                    </ul>
+                
+                  <li class="dropdown">
+                    <a  class="dropdown-toggle" data-toggle="dropdown">
+                     Final Project
+                        <span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu pull-right">
+                        <li><a href="form.php" target="blank">Form</a></li>
+                        <li><a href="Select.php" target="blank">Select</a></li>
+
+
+                       
+                        
                           
                     </ul>
                 </li>
